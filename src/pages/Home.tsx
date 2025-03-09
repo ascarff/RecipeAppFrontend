@@ -1,8 +1,16 @@
 import React from 'react'
 import { useState } from "react";
 import Checkbox from "../components/checkbox"
+import {IProteinData} from "../utils/homeHelpers.tsx";
 
-function Home() {
+interface IProtein{
+  proteinData?: IProteinData | null;
+}
+
+const Home: React.FC<IProtein> = ({proteinData}) => {
+    {proteinData?.proteins.map((each, index) => (
+    <div >each</div>
+))}
 
   const [isCheckedA, setIsCheckedA] = useState(false);
   const [isCheckedB, setIsCheckedB] = useState(false);
@@ -13,11 +21,16 @@ function Home() {
     setIsCheckedB(e.target.checked);
   };
 
+  
+
+
   return(
     <div>
       <div className='h1'>
         Home
       </div>
+
+
       <div>
         <Checkbox 
           label = "box "
@@ -30,7 +43,6 @@ function Home() {
           label = "box 2 "
           isChecked = {isCheckedB}
           handleChange = {handleChangeB}
-
         />
       </div>
     </div>

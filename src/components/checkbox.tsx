@@ -4,7 +4,6 @@ interface Props{
     label : string;
     isChecked?: boolean;
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-
 };
 
 
